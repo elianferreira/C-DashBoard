@@ -154,6 +154,16 @@ body {
   z-index: 1;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  cursor: pointer;
+}
+
+#userDetails .userProfile .user-name-admin {
+  color: #5e6376;
+  opacity: 0.7;
+}
+
+#userDetails .userProfile .user-name-admin:hover {
+  opacity: 1;
 }
 
 #userDetails .img-profile {
@@ -421,6 +431,7 @@ img {
       -ms-flex-positive: 1;
           flex-grow: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .left-side {
@@ -483,6 +494,18 @@ img {
 .side-menu svg {
   width: 16px;
   margin-right: 8px;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100vh;
 }
 
 .updates {
@@ -560,6 +583,27 @@ img {
   height: 100%;
   overflow: auto;
   background-color: var(--theme-bg-color);
+  width: 100vw;
+  z-index: 1;
+}
+
+.content-wrapper .h1-text-animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  width: 70%;
+  margin-top: 130px;
+}
+
+.content-wrapper .h1-text-animation.active {
+  display: none;
 }
 
 @media screen and (max-width: 510px) {
@@ -1116,6 +1160,199 @@ img {
           align-items: center;
   margin-left: auto;
   margin-top: 16px;
+}
+
+.container2 {
+  width: 400px;
+  display: none;
+}
+
+.container2.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+
+.container2.active #nome,
+.container2.active #apelido,
+.container2.active #idade {
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+}
+
+.container2.active .btn-info {
+  cursor: pointer;
+  border: 1px solid #fff;
+  width: 200px;
+  height: 50px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background: transparent;
+  color: #fff;
+}
+
+.container2.active .btn-info:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  font-weight: bold;
+  background: #3bf083;
+  color: #21242d;
+}
+
+.container {
+  display: none;
+}
+
+.container .card-body {
+  background-color: transparent;
+}
+
+.container .card-body .h4 {
+  margin-bottom: 20px;
+}
+
+.container .card-body #task-title,
+.container .card-body #task-description {
+  width: 200px;
+  height: 50px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-family: 'Poppins';
+  resize: none;
+}
+
+.container .card-body #task-description {
+  line-height: 40px;
+}
+
+.container .card-body #btn-task-form {
+  cursor: pointer;
+  border: 1px solid #fff;
+  width: 200px;
+  height: 50px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background: transparent;
+  color: #fff;
+}
+
+.container .card-body #btn-task-form:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  font-weight: bold;
+  background: #3bf083;
+  color: #21242d;
+}
+
+.container.active {
+  display: block;
+}
+
+#tasksContainer {
+  display: none;
+}
+
+#tasksContainer2 {
+  display: none;
+}
+
+#tasksContainer.active,
+#tasksContainer2.active {
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  z-index: 99;
+}
+
+#tasksContainer2.active .card-body p {
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.card-body {
+  width: 500px;
+  background-color: #1d1d2077;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-body .h5 {
+  border-bottom: 1px solid #ffffff34;
+  height: 70px;
+  line-height: 70px;
+  padding-left: 20px;
+  text-transform: capitalize;
+}
+
+.card-body .p {
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+.card-body .btns-edits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.card-body .btns-edits .btn-edit,
+.card-body .btns-edits .btn-delete {
+  cursor: pointer;
+  border: 1px solid #fff;
+  width: 200px;
+  height: 50px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background: transparent;
+  color: #fff;
+}
+
+.card-body .btns-edits .btn-edit:hover,
+.card-body .btns-edits .btn-delete:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.card-body .btns-edits .btn-delete:hover {
+  background: #f11927;
+  color: #21242d;
+}
+
+.card-body .btns-edits .btn-edit:hover {
+  background: #3bf083;
+  color: #21242d;
 }
 
 @media screen and (max-width: 1110px) {

@@ -1,69 +1,3 @@
-// .body-dashboard {
-//   background-color: #212121;
-//   overflow-x: hidden;
-// }
-
-// header {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-
-//   .logo {
-//     padding-left: 15px;
-//     color: #fefefe;
-//     font-family: 'Poppins';
-//   }
-// }
-
-// #dashboard {
-//   display: flex;
-//   align-items: center;
-//   justify-content: end;
-//   flex-direction: row-reverse;
-//   gap: 16px;
-
-//   padding: 20px;
-
-//   #logout {
-//     display: none;
-//   }
-
-//   #logout.active {
-//     display: block;
-//     position: absolute;
-//     top: 80px;
-//     right: 15px;
-//     background: transparent;
-//     border: 1px solid #fff;
-//     padding: 5px;
-//     border-radius: 5px;
-//     cursor: pointer;
-//     color: #fff;
-//   }
-
-//   #overlayApp {
-//     transform: translateX(1130px);
-//     position: absolute;
-//     transition: 0.3s ease;
-//   }
-
-//   #overlayApp.active {
-//     display: block;
-//     transform: translateX(0);
-//     width: 200px;
-//     height: 150px;
-//     background-color: #111111;
-//     top: 5em;
-//     right: 3.5em;
-//     border-radius: 5px;
-//     transition: 0.3s ease;
-//   }
-
-//   a {
-//     height: 24px;
-//   }
-// }
-
 #userDetails {
   display: flex;
   align-items: center;
@@ -71,13 +5,16 @@
   flex-direction: row-reverse;
   position: relative;
   .userProfile {
-    // position: absolute;
-    // top: 90px;
     z-index: 1;
-    // top: 5em;
-    // right: 3.5em;
-    // transform: translateX(1130px);
     transition: 0.3s ease;
+    cursor: pointer;
+    .user-name-admin {
+      color: #5e6376;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   .img-profile {
@@ -94,16 +31,8 @@
     font-size: 0.7em;
     text-align: right;
     color: var(--theme-color);
-    // display: none;
   }
 }
-
-// #userDetails.active {
-//   .userProfile {
-//     transform: translateX(0px);
-//     color: #fefefe;
-//   }
-// }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 * {
@@ -306,6 +235,7 @@ img {
   display: flex;
   flex-grow: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .left-side {
@@ -352,6 +282,13 @@ img {
 .side-menu svg {
   width: 16px;
   margin-right: 8px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
 }
 
 .updates {
@@ -408,6 +345,23 @@ img {
   height: 100%;
   overflow: auto;
   background-color: var(--theme-bg-color);
+  width: 100vw;
+  z-index: 1;
+
+  .h1-text-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+
+    width: 70%;
+
+    margin-top: 130px;
+  }
+
+  .h1-text-animation.active {
+    display: none;
+  }
 }
 @media screen and (max-width: 510px) {
   .content-wrapper {
@@ -848,6 +802,179 @@ img {
   margin-left: auto;
   margin-top: 16px;
 }
+
+.container2 {
+  width: 400px;
+  display: none;
+}
+
+.container2.active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+
+  #nome,
+  #apelido,
+  #idade {
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+  }
+
+  .btn-info {
+    cursor: pointer;
+    border: 1px solid #fff;
+    width: 200px;
+    height: 50px;
+    transition: 0.3s ease;
+    background: transparent;
+    color: #fff;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s ease;
+      font-weight: bold;
+      background: #3bf083;
+      color: #21242d;
+    }
+  }
+}
+
+.container {
+  // width: 100%;
+  display: none;
+
+  .card-body {
+    background-color: transparent;
+    .h4 {
+      margin-bottom: 20px;
+    }
+
+    #task-title,
+    #task-description {
+      width: 200px;
+      height: 50px;
+      outline: none;
+      border: none;
+      margin-bottom: 20px;
+      padding: 5px;
+      font-family: 'Poppins';
+      resize: none;
+    }
+
+    #task-description {
+      line-height: 40px;
+    }
+
+    #btn-task-form {
+      cursor: pointer;
+      border: 1px solid #fff;
+      width: 200px;
+      height: 50px;
+      transition: 0.3s ease;
+      background: transparent;
+      color: #fff;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s ease;
+        font-weight: bold;
+        background: #3bf083;
+        color: #21242d;
+      }
+    }
+  }
+}
+.container.active {
+  display: block;
+}
+
+#tasksContainer {
+  display: none;
+}
+
+#tasksContainer2 {
+  display: none;
+}
+
+#tasksContainer.active,
+#tasksContainer2.active {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  // flex-grow: 5;
+  z-index: 99;
+}
+
+#tasksContainer2.active {
+  .card-body {
+    p {
+      padding: 20px;
+      margin-left: 20px;
+    }
+  }
+}
+
+.card-body {
+  width: 500px;
+  background-color: #1d1d2077;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  .h5 {
+    border-bottom: 1px solid #ffffff34;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 20px;
+    text-transform: capitalize;
+  }
+
+  .p {
+    padding: 20px;
+    word-wrap: break-word;
+  }
+
+  .btns-edits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+
+    .btn-edit,
+    .btn-delete {
+      cursor: pointer;
+      border: 1px solid #fff;
+      width: 200px;
+      height: 50px;
+      transition: 0.3s ease;
+      background: transparent;
+      color: #fff;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s ease;
+        font-weight: bold;
+      }
+    }
+
+    .btn-delete {
+      &:hover {
+        background: #f11927;
+        color: #21242d;
+      }
+    }
+
+    .btn-edit {
+      &:hover {
+        background: #3bf083;
+        color: #21242d;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1110px) {
   .app-card {
     width: calc(50% - 20px);
